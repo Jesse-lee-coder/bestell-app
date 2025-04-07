@@ -1,0 +1,213 @@
+/* General Styling */
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.d_none {
+    display: none !important;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Header */
+
+header {
+    background-color: orange;
+    height: 144px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 24px;
+    align-items: center;
+}
+
+header img {
+    width: 240px;
+}
+
+/* Main Container and Layout */
+
+main {
+    display: flex;
+}
+
+.main-content {
+    width: calc(100% - 300px);
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* Headline Image and Restaurant Logo */
+
+.headline-img {
+    object-fit: cover;
+    height: 400px;
+    background-position: center;
+}
+
+.restaurant-logo {
+    position: absolute;
+    width: 100px;
+    top: 330px;
+    right: calc(50% - 72px);
+    border-radius: 60%;
+    padding: 6px;
+    background: rgba(231, 131, 9, 0.8);
+    box-shadow: 0px -8px 16px black;
+}
+
+.restaurant-info {
+    display: flex;
+    flex-direction: column;
+    padding-left: 24px;
+    padding-bottom: 24px;
+}
+
+.restaurant-info h2 {
+    display: flex;
+    justify-content: center;
+    margin-top: 48px;
+}
+
+.restaurant-info span {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.reviews {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Menu Slider and Category Styling */
+
+.menu-slider img {
+    width: 24px;
+    margin-right: 24px;
+}
+
+.menu-slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: orange;
+    border-radius: 30px;
+    padding: 6px;
+    margin-left: 24px;
+    margin-right: 24px;
+}
+
+.menu-slider a {
+    margin-right: 24px;
+    text-decoration: none;
+    color: black;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.menu-slider a:hover {
+    color: white;
+}
+
+/* Star Rating */
+
+.star {
+    color: #999;
+    font-size: 32px;
+    cursor: pointer;
+    margin-right: 6px;
+}
+
+/* Menu Item Styling */
+
+.menu-category {
+    display: flex;
+    flex-direction: column;
+    padding: 0 24px 12px 24px;
+}
+
+.category-title {
+    display: flex;
+    justify-content: center;
+    font-size: 32px;
+    margin-bottom: 6px;
+}
+
+.category-img {
+    object-fit: cover;
+    height: 200px;
+    border-radius: 8px;
+}
+
+/* Verhindert das Scrollen des Körpers */
+.body-scroll-off {
+    overflow: hidden;
+}
+
+/* Delivery Options Styling */
+
+.delivery-options {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    margin-left: 16px;
+}
+
+.delivery-options button {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    background-color: white;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.delivery-options button.active {
+    background-color: orange;
+    border-color: orange;
+    font-weight: bold;
+}
+
+/* Footer-Styling */
+footer {
+    height: 80px;
+    background-color: orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Scrollbalken */
+
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+  
+::-webkit-scrollbar-track {
+    background: #fafafa;
+}
+  
+::-webkit-scrollbar-thumb {
+    background-color: orange;
+    border-radius: 6px;
+    border: 3px solid #fafafa;
+}
+  
+::-webkit-scrollbar-thumb:hover {
+    background-color: darkorange;
+}
+  

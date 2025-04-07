@@ -1,0 +1,84 @@
+/* Menu Item (Gerichte) Styling */
+
+/* Container für jedes Menüelement (Gericht) */
+.menu-item {
+    margin: 0 24px;
+    padding: 16px;
+    position: relative;
+    background-color: white;
+    border-radius: 4px;
+    margin-bottom: 12px;
+    box-shadow: 0px 1px 1px orange;
+    border: 1px solid orange;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.menu-item:hover {
+    background-color: orange;
+    color: white;
+}
+
+/* Plus-Icon Styling für Menüelemente */
+.menu-item-add {
+    position: absolute;
+    width: 24px !important;
+    height: 24px !important;
+    top: 0;
+    right: 0;
+    border: 2px solid orange;
+    border-top: none;
+    border-right: none;
+    padding: 4px;
+    border-radius: 4px;
+    background-color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.menu-item-add:hover {
+    background-color: orange;
+}
+
+.menu-item:hover .menu-item-add:hover {
+    background-color: orange;
+    color: black;
+}
+
+/* Wenn das Plus-Icon gehovt wird, wird die Dish-Box weiß */
+.menu-item:hover:has(.menu-item-add:hover) {
+    background-color: white;
+    color: black;
+}
+
+.menu-item-price {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Template Styles */
+
+.shopping-amount {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.shopping-element {
+    display: flex;
+    justify-content: space-between;
+}
+
+.shopping-element span {
+    padding: 0 12px;
+    font-size: 16px;
+}
+
+.shopping-container {
+    margin: 16px 0;
+    padding: 0 16px;
+}
+
+.shopping-price {
+    display: flex;
+    align-items: center;
+}

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burgerlicious</title>
+    <link rel="icon" type="image/x-icon" href="./img/Favicon/favicon-16x16.png">
+
+
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="stylesheet" href="./styles/shopping-cart.css">
+    <link rel="stylesheet" href="./styles/templates.css">
+    <link rel="stylesheet" href="./styles/responsive.css">
+
+</head>
+
+<body id="body" onload="render()">
+
+    <header id="header">
+        <a href="./index.html"><img src="./img/Logo/Bestell App- Logo.svg" alt="Website Logo"></a>
+    </header>
+
+    <main id="main">
+        <div class="main-content">
+            <img class="headline-img" src="./img/Food/burger.jpg" alt="Burger">
+            <img class="restaurant-logo" src="./img/Food/burger-logo.png" alt="Restaurant Logo">
+            <div class="restaurant-info">
+                <h2>Burgerlicious</h2>
+                <span>Dein Paradies für saftige Burger! <br> Wir servieren frisch zubereitete, saftige Burger mit hochwertigen Zutaten, handgemachten Saucen und knusprigen Beilagen.</span>
+                <p class="reviews">
+                    <span class="star" onclick="toggleRating()" id="star">★</span>
+                    <span id="rating">4.5</span> <span id="reviews">(200 Bewertungen)</span>
+                </p>
+
+            </div>
+            <nav class="menu-slider">
+
+                <a href="#burgers">Burgers</a>
+                <a href="#sides">Beilagen</a>
+                <a href="#dips">Dips</a>
+                <a href="#drinks">Getränke</a>
+                <a href="#desserts">Desserts</a>
+            </nav>
+
+            <div> 
+                <div class="menu-category">
+                    <h3 class="category-title">Burgers</h3>
+                    <img class="category-img" src="./img/Food/burger.jpg" alt="Burger">
+                </div>
+                <div id="burgers"></div>
+            </div>
+
+            <div> 
+                <div class="menu-category">
+                    <h3 class="category-title">Beilagen</h3>
+                    <img class="category-img" src="./img/Food/pommes.jpg" alt="Sides">
+                </div>
+                <div id="sides"></div>
+            </div>
+
+            <div> 
+                <div class="menu-category">
+                    <h3 class="category-title">Dips</h3>
+                    <img class="category-img" src="./img/Food/dips.jpg" alt="Dips">
+                </div>
+                <div id="dips"></div>
+            </div>
+
+            <div> 
+                <div class="menu-category">
+                    <h3 class="category-title">Getränke</h3>
+                    <img class="category-img" src="./img/Food/getränke.jpg" alt="Drinks">
+                </div>
+                <div id="drinks"></div>
+            </div>
+
+            <div>
+                <div class="menu-category">
+                    <h3 class="category-title">Desserts</h3>
+                    <img class="category-img" src="./img/Food/backwaren.jpg" alt="Desserts">
+                </div>
+                <div id="desserts"></div>
+            </div>
+
+        </div>
+
+        <div class="shopping-cart-container shopping-cart-slide" id="shopping-cart">
+            
+            <div class="shopping-cart-sticky">
+                <h2 class="shopping-cart-title">Warenkorb</h2>
+                <div onclick="showShoppingCart()" class="shopping-cart-btn-mobile" id="shopping_cart_btn_mobile">
+                    <h3>Warenkorb</h3>
+                </div>
+
+                <div class="delivery-options">
+                    <button id="pickup-btn" class="active" onclick="toggleDeliveryOption('pickup')">Abholung (kostenlos)</button>
+                    <button id="delivery-btn" onclick="toggleDeliveryOption('delivery')">Lieferung (3,99€)</button>
+                </div>
+                
+                <div class="shopping-list" id="shopping-list"></div>
+
+                <div class="shopping-cart-empty" id="shopping-cart-empty">
+                    <h3>Fülle deinen Warenkorb</h3>
+                </div>
+                
+                <div class="shopping-cart-price-summary d_none" id="shopping-cart-price-summary" >
+                    <div class="price-calculator">
+                        <span>Zwischensumme</span>
+                        <span id="subtotal"></span>
+                    </div>
+
+                    <div class="price-calculator">
+                        <span>Lieferkosten</span>
+                        <span id="delivery-cost"></span>
+                    </div>
+
+                    <div class="price-calculator">
+                        <span><b>Gesamt</b></span>
+                        <span id="total-price"></span>
+                    </div>
+
+                    <div>
+                        <a class="order-btn" onclick="order()" id="order_btn"><strong>Bestellen</strong></a>
+                    </div>
+                </div>
+
+                <div class="order-confirmation d_none" id="order-confirmation">
+                    <p><strong>Vielen Dank für Ihre Bestellung!</strong> <br> <br>
+                    Eine Bestätigung mit allen Details erhalten Sie per E-Mail.</p>
+                    
+                    <button class="new-order-btn" onclick="newOrder()"><strong>Neue Bestellung</strong></button>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+    <footer>
+        <p><strong>Developer Akademie Projekt 2025</strong></p>
+    </footer>
+    <script src="./javascript/menuData.js"></script>
+    <script src="./javascript/scripts.js"></script>
+    <script src="./javascript/templates.js"></script>
+
+</body>
+
+</html>

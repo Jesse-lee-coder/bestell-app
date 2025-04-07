@@ -1,0 +1,125 @@
+/* Shopping Cart Container */
+
+.shopping-cart-container {
+    width: 300px;
+    box-shadow: -12px 1px 13px 0px hsl(252deg 13% 46% / 12%);
+    z-index: 3;
+}
+
+.shopping-cart-sticky {
+    position: sticky;
+    top: 10px;
+}
+
+.shopping-cart-title {
+    text-align: center;
+}
+
+/* Shopping List and Images */
+
+.shopping-list {
+    overflow-y: auto;
+}
+
+.shopping-list img:hover {
+    filter: brightness(0);
+}
+
+.shopping-list img {
+    width: 16px;
+    object-fit: contain;
+    margin: 0;
+    cursor: pointer;
+    padding: 0;
+}
+
+/* Empty Shopping Cart Message */
+
+.shopping-cart-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.shopping-cart-empty img {
+    width: 80px;
+}
+
+/* Price Summary Section */
+
+.shopping-cart-price-summary {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+}
+
+.price-calculator {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Mobile Shopping Cart Button */
+
+.shopping-cart-btn-mobile {
+    display: none;
+}
+
+/* Order Button */
+
+.order-btn {
+    padding: 8px;
+    background-color: orange;
+    color: black;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: none;
+    margin-top: 16px;
+}
+
+.order-btn:hover {
+    color: white;
+}
+
+/* Order Confirmation Section */
+
+.order-confirmation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.order-confirmation p {
+    background-color: orange;
+    color: white;
+    padding: 16px;
+    margin: 16px;
+    font-weight: bold;
+    border-radius: 16px;
+}
+
+/* New order button after order confirmation */
+.new-order-btn {
+    padding: 8px;
+    background-color: orange;
+    color: black;
+    cursor: pointer;
+    outline-color: none;
+    border: none;
+    width: 160px;
+    font-weight: bold;
+}
+
+.new-order-btn:hover {
+    color: white;
+}
+
+/* Trashcan Icon Hover Effect */
+
+.trashcan:hover {
+    filter: brightness(0) saturate(100%) invert(41%) sepia(92%) saturate(650%) hue-rotate(0deg) brightness(103%) contrast(104%) !important;
+}
+
