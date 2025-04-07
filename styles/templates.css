@@ -10,11 +10,6 @@
     transition: background-color 0.3s, color 0.3s;
 }
 
-.menu-item:hover {
-    background-color: orange;
-    color: white;
-}
-
 .menu-item-add {
     position: absolute;
     width: 24px !important;
