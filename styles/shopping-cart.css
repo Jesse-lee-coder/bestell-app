@@ -103,7 +103,6 @@
 
 /* New order button after order confirmation */
 .new-order-btn {
-    padding: 8px;
     background-color: orange;
     color: black;
     cursor: pointer;
@@ -111,6 +110,9 @@
     border: none;
     width: 160px;
     font-weight: bold;
+    border-radius: 8px;
+    padding: 14px;
+    font-size: 14px;
 }
 
 .new-order-btn:hover {

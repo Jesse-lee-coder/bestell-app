@@ -92,6 +92,10 @@ main {
     align-items: center;
 }
 
+.move-left {
+    margin-left: 5px;
+}
+
 
 /* Menu Slider and Category Styling */
 

@@ -218,7 +218,6 @@ function renderSum() {
     sumPriceRef.innerHTML = sumPrice.toFixed(2).replace(".", ",") + " €";
 }
 
-
 // 
 // Mengensteuerung im Warenkorb
 // 
