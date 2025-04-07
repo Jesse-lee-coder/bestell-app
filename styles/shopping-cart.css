@@ -1,5 +1,3 @@
-/* Shopping Cart Container */
-
 .shopping-cart-container {
     width: 300px;
     box-shadow: -12px 1px 13px 0px hsl(252deg 13% 46% / 12%);
@@ -14,8 +12,6 @@
 .shopping-cart-title {
     text-align: center;
 }
-
-/* Shopping List and Images */
 
 .shopping-list {
     overflow-y: auto;
@@ -33,8 +29,6 @@
     padding: 0;
 }
 
-/* Empty Shopping Cart Message */
-
 .shopping-cart-empty {
     display: flex;
     flex-direction: column;
@@ -45,8 +39,6 @@
 .shopping-cart-empty img {
     width: 80px;
 }
-
-/* Price Summary Section */
 
 .shopping-cart-price-summary {
     display: flex;
@@ -59,13 +51,9 @@
     justify-content: space-between;
 }
 
-/* Mobile Shopping Cart Button */
-
 .shopping-cart-btn-mobile {
     display: none;
 }
-
-/* Order Button */
 
 .order-btn {
     padding: 8px;
@@ -81,8 +69,6 @@
 .order-btn:hover {
     color: white;
 }
-
-/* Order Confirmation Section */
 
 .order-confirmation {
     display: flex;
@@ -101,7 +87,6 @@
     border-radius: 16px;
 }
 
-/* New order button after order confirmation */
 .new-order-btn {
     background-color: orange;
     color: black;
@@ -118,8 +103,6 @@
 .new-order-btn:hover {
     color: white;
 }
-
-/* Trashcan Icon Hover Effect */
 
 .trashcan:hover {
     filter: brightness(0) saturate(100%) invert(41%) sepia(92%) saturate(650%) hue-rotate(0deg) brightness(103%) contrast(104%) !important;

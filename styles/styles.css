@@ -1,5 +1,3 @@
-/* General Styling */
-
 * {
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -19,8 +17,6 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Header */
-
 header {
     background-color: orange;
     height: 144px;
@@ -34,8 +30,6 @@ header img {
     width: 240px;
 }
 
-/* Main Container and Layout */
-
 main {
     display: flex;
 }
@@ -47,8 +41,6 @@ main {
     flex-direction: column;
     position: relative;
 }
-
-/* Headline Image and Restaurant Logo */
 
 .headline-img {
     object-fit: cover;
@@ -96,9 +88,6 @@ main {
     margin-left: 5px;
 }
 
-
-/* Menu Slider and Category Styling */
-
 .menu-slider img {
     width: 24px;
     margin-right: 24px;
@@ -127,16 +116,12 @@ main {
     color: white;
 }
 
-/* Star Rating */
-
 .star {
     color: #999;
     font-size: 32px;
     cursor: pointer;
     margin-right: 6px;
 }
-
-/* Menu Item Styling */
 
 .menu-category {
     display: flex;
@@ -157,12 +142,9 @@ main {
     border-radius: 8px;
 }
 
-/* Verhindert das Scrollen des Körpers */
 .body-scroll-off {
     overflow: hidden;
 }
-
-/* Delivery Options Styling */
 
 .delivery-options {
     display: flex;
@@ -185,7 +167,6 @@ main {
     font-weight: bold;
 }
 
-/* Footer-Styling */
 footer {
     height: 80px;
     background-color: orange;
@@ -193,8 +174,6 @@ footer {
     justify-content: center;
     align-items: center;
 }
-
-/* Scrollbalken */
 
 ::-webkit-scrollbar {
     width: 12px;

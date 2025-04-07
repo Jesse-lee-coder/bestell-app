@@ -1,47 +1,14 @@
-function getTemplateBurger(indexBurger) {
-    return`<div class="menu-item">
-                        <h3>${burgers[indexBurger].name}</h3>
-                        <p>${burgers[indexBurger].description}</p>
-                        <span class="menu-item-price">${burgers[indexBurger].price.toFixed(2).replace(".", ",")} €</span>
-                        <img onclick="addToShoppinglist(${indexBurger})" class="menu-item-add" src="./img/assets/plus.png" alt="plus symbol">
-                    </div>`
-}
+function getTemplate(index, category) {
+    const item = menuItems[category][index]; 
 
-function getTemplateSide(indexSide) {
-    return `<div class="menu-item">
-                <h3>${sides[indexSide].name}</h3>
-                <p>${sides[indexSide].description}</p>
-                <span class="menu-item-price">${sides[indexSide].price.toFixed(2).replace(".", ",")} €</span>
-                <img onclick="addToShoppinglistSides(${indexSide})" class="menu-item-add" src="./img/assets/plus.png" alt="plus symbol">
-            </div>`;
-}
-
-function getTemplateDip(indexDip) {
-    return `<div class="menu-item">
-                <h3>${dips[indexDip].name}</h3>
-                <p>${dips[indexDip].description}</p>
-                <span class="menu-item-price">${dips[indexDip].price.toFixed(2).replace(".", ",")} €</span>
-                <img onclick="addToShoppinglistDips(${indexDip})" class="menu-item-add" src="./img/assets/plus.png" alt="plus symbol">
-            </div>`;
-}
-
-
-function getTemplateDrink(indexDrink) {
-    return `<div class="menu-item">
-                <h3>${drinks[indexDrink].name}</h3>
-                <p>${drinks[indexDrink].description}</p>
-                <span class="menu-item-price">${drinks[indexDrink].price.toFixed(2).replace(".", ",")} €</span>
-                <img onclick="addToShoppinglistDrinks(${indexDrink})" class="menu-item-add" src="./img/assets/plus.png" alt="plus symbol">
-            </div>`;
-}
-
-function getTemplateDessert(indexDessert) {
-    return `<div  class="menu-item">
-                <h3>${desserts[indexDessert].name}</h3>
-                <p>${desserts[indexDessert].description}</p>
-                <span class="menu-item-price">${desserts[indexDessert].price.toFixed(2).replace(".", ",")} €</span>
-                <img onclick="addToShoppinglistDesserts(${indexDessert})" class="menu-item-add" src="./img/assets/plus.png" alt="plus symbol">
-            </div>`;
+    return `
+        <div class="menu-item">
+            <h3>${item.name}</h3>
+            <p>${item.description}</p>
+            <span class="menu-item-price">${item.price.toFixed(2).replace(".", ",")} €</span>
+            <img onclick="addToShoppinglist(${index}, '${category}')" class="menu-item-add" src="./img/assets/plus.png" alt="plus symbol">
+        </div>
+    `;
 }
 
 function getShoppinglistTemplate(indexMyList) {
@@ -60,3 +27,4 @@ function getShoppinglistTemplate(indexMyList) {
                     </div>
                 </div>`
 }
+     

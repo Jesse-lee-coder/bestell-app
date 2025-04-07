@@ -1,199 +1,68 @@
-// 
-// Bewertungssystem
-// 
-
-// Startbewertung und Anzahl der Bewertungen
 let rating = 4.5;
 let reviews = 200;
-let liked = false; // Speichert, ob der Stern aktiv ist
+let liked = false;
+let isPickup = true;
 
-// Funktion zum Umschalten der Bewertung
 function toggleRating() {
     if (!liked) {
-        // Bewertung erhöhen (Stern aktiv)
         reviews++;
-        rating = ((rating * (reviews - 1)) + 5) / reviews; 
+        rating = ((rating * (reviews - 1)) + 5) / reviews;
     } else {
-        // Bewertung verringern (Stern inaktiv)
         rating = ((rating * reviews) - 5) / (reviews - 1);
         reviews--;
     }
 
-    liked = !liked; // Zustand umkehren
+    liked = !liked;
 
-    // Elemente aktualisieren
     document.getElementById("rating").textContent = rating.toFixed(1);
     document.getElementById("reviews").textContent = `(${reviews} Bewertungen)`;
 
-    // Stern-Farbe ändern
     let star = document.getElementById("star");
-    star.style.color = liked ? "#FFD700" : "#999"; // Gelb für aktiv, Grau für inaktiv
+    star.style.color = liked ? "#FFD700" : "#999";
 }
-
-
-//
-// Rendering der Speisekategorien
-// 
 
 function render() {
-    renderBurgers()
-    renderSides();
-    renderDips();
-    renderDrinks();
-    renderDesserts();
+    renderAllItems();
+    renderShoppinglist();
+    renderSum();
 }
 
-function renderBurgers() {
-    let burgersRef = document.getElementById("burgers");
-    burgersRef.innerHTML = "";
+function renderAllItems() {
+    renderCategoryItems('burgers');
+    renderCategoryItems('sides');
+    renderCategoryItems('dips');
+    renderCategoryItems('drinks');
+    renderCategoryItems('desserts');
+}
 
-    for (let indexBurger = 0; indexBurger < burgers.length; indexBurger++) {
-        burgersRef.innerHTML += getTemplateBurger(indexBurger);
+function renderCategoryItems(category) {
+    let categoryRef = document.getElementById(category);
+    categoryRef.innerHTML = "";
+
+    if (menuItems[category]) {
+        for (let index = 0; index < menuItems[category].length; index++) {
+            categoryRef.innerHTML += getTemplate(index, category);
+        }
     }
 }
-
-function renderSides() {
-    let sidesRef = document.getElementById("sides");
-    sidesRef.innerHTML = "";
-
-    for (let indexSide = 0; indexSide < sides.length; indexSide++) {
-        sidesRef.innerHTML += getTemplateSide(indexSide);
-    }
-}
-
-function renderDips() {
-    let dipsRef = document.getElementById("dips");
-    dipsRef.innerHTML = "";
-
-    for (let indexDip = 0; indexDip < dips.length; indexDip++) {
-        dipsRef.innerHTML += getTemplateDip(indexDip);
-    }
-}
-
-function renderDrinks() {
-    let drinksRef = document.getElementById("drinks");
-    drinksRef.innerHTML = "";
-
-    for (let indexDrink = 0; indexDrink < drinks.length; indexDrink++) {
-        drinksRef.innerHTML += getTemplateDrink(indexDrink);
-    }
-}
-
-function renderDesserts() {
-    let dessertsRef = document.getElementById("desserts");
-    dessertsRef.innerHTML = "";
-
-    for (let indexDessert = 0; indexDessert < desserts.length; indexDessert++) {
-        dessertsRef.innerHTML += getTemplateDessert(indexDessert);
-    }
-}
-
-
-// 
-// Produkte zum Warenkorb hinzufügen
-// 
-
-function addToShoppinglist(indexBurger) {
-    let checkShoppingList = myList.findIndex((listElement) => listElement["name"] == burgers[indexBurger].name);
-    let emptyCart = document.getElementById("shopping-cart-empty");
-    let orderAcceptedRef = document.getElementById("order-confirmation");
-    orderAcceptedRef.classList.add("d_none");
-    emptyCart.classList.add("d_none");
-
-    if (checkShoppingList < 0) {
-        burgers[indexBurger].ammount = 1;
-        myList.push(burgers[indexBurger]);
-        renderShoppinglist();
-    } else {
-        myList[checkShoppingList].ammount++;
-        newAmmount(checkShoppingList);
-    }
-}
-
-function addToShoppinglistSides(indexSide) {
-    let checkShoppingList = myList.findIndex((listElement) => listElement["name"] == sides[indexSide].name);
-    let emptyCart = document.getElementById("shopping-cart-empty");
-    let orderAcceptedRef = document.getElementById("order-confirmation");
-    orderAcceptedRef.classList.add("d_none");
-    emptyCart.classList.add("d_none");
-
-    if (checkShoppingList < 0) {
-        sides[indexSide].ammount = 1;
-        myList.push(sides[indexSide]);
-        renderShoppinglist();
-    } else {
-        myList[checkShoppingList].ammount++;
-        newAmmount(checkShoppingList);
-    }
-}
-
-function addToShoppinglistDips(indexDip) {
-    let checkShoppingList = myList.findIndex((listElement) => listElement["name"] == dips[indexDip].name);
-    let emptyCart = document.getElementById("shopping-cart-empty");
-    let orderAcceptedRef = document.getElementById("order-confirmation");
-    orderAcceptedRef.classList.add("d_none");
-    emptyCart.classList.add("d_none");
-
-    if (checkShoppingList < 0) {
-        dips[indexDip].ammount = 1;
-        myList.push(dips[indexDip]);
-        renderShoppinglist();
-    } else {
-        myList[checkShoppingList].ammount++;
-        newAmmount(checkShoppingList);
-    }
-}
-
-function addToShoppinglistDrinks(indexDrink) {
-    let checkShoppingList = myList.findIndex((listElement) => listElement["name"] == drinks[indexDrink].name);
-    let emptyCart = document.getElementById("shopping-cart-empty");
-    let orderAcceptedRef = document.getElementById("order-confirmation");
-    orderAcceptedRef.classList.add("d_none");
-    emptyCart.classList.add("d_none");
-
-    if (checkShoppingList < 0) {
-        drinks[indexDrink].ammount = 1;
-        myList.push(drinks[indexDrink]);
-        renderShoppinglist();
-    } else {
-        myList[checkShoppingList].ammount++;
-        newAmmount(checkShoppingList);
-    }
-}
-
-function addToShoppinglistDesserts(indexDessert) {
-    let checkShoppingList = myList.findIndex((listElement) => listElement["name"] == desserts[indexDessert].name);
-    let emptyCart = document.getElementById("shopping-cart-empty");
-    let orderAcceptedRef = document.getElementById("order-confirmation");
-    orderAcceptedRef.classList.add("d_none");
-    emptyCart.classList.add("d_none");
-
-    if (checkShoppingList < 0) {
-        desserts[indexDessert].ammount = 1;
-        myList.push(desserts[indexDessert]);
-        renderShoppinglist();
-    } else {
-        myList[checkShoppingList].ammount++;
-        newAmmount(checkShoppingList);
-    }
-}
-
-
-// 
-// Warenkorb & Preisberechnung
-// 
 
 function renderShoppinglist() {
     let shoppingListRef = document.getElementById("shopping-list");
     let sumPriceContainerRef = document.getElementById("shopping-cart-price-summary");
+    let emptyCartMessage = document.getElementById("shopping-cart-empty");
+
     shoppingListRef.innerHTML = "";
 
-    if (myList.length != 0) {
-        for (let indexMyList = 0; indexMyList < myList.length; indexMyList++) {
-            shoppingListRef.innerHTML += getShoppinglistTemplate(indexMyList);
+    if (myList.length > 0) {
+        for (let index = 0; index < myList.length; index++) {
+            shoppingListRef.innerHTML += getShoppinglistTemplate(index);
         }
         sumPriceContainerRef.classList.remove("d_none");
+        emptyCartMessage.classList.add("d_none");
         renderSum();
+    } else {
+        sumPriceContainerRef.classList.add("d_none");
+        emptyCartMessage.classList.remove("d_none");
     }
 }
 
@@ -218,9 +87,18 @@ function renderSum() {
     sumPriceRef.innerHTML = sumPrice.toFixed(2).replace(".", ",") + " €";
 }
 
-// 
-// Mengensteuerung im Warenkorb
-// 
+function addToShoppinglist(index, category) {
+    const item = menuItems[category][index];
+    let checkShoppingList = myList.findIndex(listElement => listElement.name === item.name);
+
+    if (checkShoppingList < 0) {
+        let newItem = { name: item.name, price: item.price, description: item.description, ammount: 1 };
+        myList.push(newItem);
+    } else {
+        myList[checkShoppingList].ammount++;
+    }
+    renderShoppinglist();
+}
 
 function addAmount(indexMyList) {
     myList[indexMyList].ammount++;
@@ -235,7 +113,6 @@ function newAmmount(indexMyList) {
 
     shoppingListAmmount.innerHTML = newAmmount + "x";
     shoppingListPrice.innerHTML = newPrice + " €";
-
     renderSum();
 }
 
@@ -261,26 +138,12 @@ function deleteShoppingElement(indexMyList) {
     }
 }
 
-
-// 
-// Abholung oder Lieferung auswählen
-// 
-
-let isPickup = true;
-
 function toggleDeliveryOption(option) {
     isPickup = option === 'pickup';
-
     document.getElementById('pickup-btn').classList.toggle('active', isPickup);
     document.getElementById('delivery-btn').classList.toggle('active', !isPickup);
-
     renderSum();
 }
-
-
-// 
-// Warenkorb anzeigen / verstecken (mobil)
-// 
 
 function showShoppingCart() {
     let shoopingCart = document.getElementById("shopping-cart");
@@ -293,11 +156,6 @@ function showShoppingCart() {
     shoppingBtn.classList.toggle("mobile-overflow");
     bodyScrollOff.classList.toggle("body-scroll-off");
 }
-
-
-// 
-// Bestellung abschließen & zurücksetzen
-// 
 
 function order() {
     myList = [];
@@ -313,7 +171,7 @@ function order() {
     emptyCart.classList.add("d_none");
 
     let shoppingListRef = document.getElementById("shopping-list");
-    shoppingListRef.innerHTML = ""; 
+    shoppingListRef.innerHTML = "";
 }
 
 function newOrder() {
@@ -331,3 +189,4 @@ function newOrder() {
         emptyCart.classList.remove("d_none");
     }
 }
+

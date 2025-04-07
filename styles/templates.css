@@ -1,6 +1,3 @@
-/* Menu Item (Gerichte) Styling */
-
-/* Container für jedes Menüelement (Gericht) */
 .menu-item {
     margin: 0 24px;
     padding: 16px;
@@ -18,7 +15,6 @@
     color: white;
 }
 
-/* Plus-Icon Styling für Menüelemente */
 .menu-item-add {
     position: absolute;
     width: 24px !important;
@@ -44,7 +40,6 @@
     color: black;
 }
 
-/* Wenn das Plus-Icon gehovt wird, wird die Dish-Box weiß */
 .menu-item:hover:has(.menu-item-add:hover) {
     background-color: white;
     color: black;
@@ -54,8 +49,6 @@
     font-size: 16px;
     font-weight: bold;
 }
-
-/* Template Styles */
 
 .shopping-amount {
     display: flex;
